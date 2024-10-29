@@ -1,0 +1,14 @@
+fastlane_version "2.211.0"  # Ensure this matches the installed version
+
+default_platform :ios
+
+platform :ios do
+  desc "Deploy to TestFlight"
+  lane :deploy do
+    build_ios_app(
+      scheme: "Runner",  # Your app's scheme
+      export_method: "app-store"
+    )
+    upload_to_testflight
+  end
+end
