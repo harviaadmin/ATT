@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1008918750352-rj0uddhc3nvunk10obo555evsjtfmrn6.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1008918750352-rj0uddhc3nvunk10obo555evsjtfmrn6</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>1008918750352-ae7be00ok3lue1dpql3hergdv2sdmj63.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAIb7SjvIJfU1_gImYcST3jHg1oMZGD8mI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1008918750352</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.glory.activetraveltours</string>
+	<key>PROJECT_ID</key>
+	<string>active-travel-tours-ecdd7</string>
+	<key>STORAGE_BUCKET</key>
+	<string>active-travel-tours-ecdd7.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1008918750352:ios:411fe95d5750cc1d91e415</string>
+</dict>
+</plist>

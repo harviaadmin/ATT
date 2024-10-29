@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "1008918750352",
+    "project_id": "active-travel-tours-ecdd7",
+    "storage_bucket": "active-travel-tours-ecdd7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1008918750352:android:b742388f215186b491e415",
+        "android_client_info": {
+          "package_name": "com.glory.activetraveltours"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1008918750352-ae7be00ok3lue1dpql3hergdv2sdmj63.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.glory.activetraveltours",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "1008918750352-2sretnmrml976jldt40paqj3a5fn3ujq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBunDWaVcPCCdsCv5DaFpBtI_GlK4_-MgA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1008918750352-2sretnmrml976jldt40paqj3a5fn3ujq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1008918750352-rj0uddhc3nvunk10obo555evsjtfmrn6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.glory.activetraveltours"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
