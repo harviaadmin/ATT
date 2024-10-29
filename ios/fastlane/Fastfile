@@ -1,23 +1,30 @@
-fastlane_version "2.225.0"
+# Fastfile
 
-default_platform :ios
+default_platform(:ios)
 
 platform :ios do
-  desc "Deploy to TestFlight"
-  lane :beta do
-    build_ios_app(
-      scheme: "Runner",  # Replace this with your app's scheme
-      export_method: "app-store"
-    )
-    upload_to_testflight
-  end
-
-  desc "Deploy to Production"
+  desc "Build and deploy to TestFlight"
   lane :deploy do
+    # Run pod install
+    sh "pod install"
+
+    # Build the app
     build_ios_app(
-      scheme: "Runner",
-      export_method: "app-store"
+      scheme: "Runner", # Change this if your scheme name is different
+      export_method: "app-store", # Change this if your export method is different
+      export_xcargs: "-allowProvisioningUpdates", # Allow updates to provisioning profiles
+      build_path: "build", # Path to save the build
+      signing_style: "manual", # Use manual signing
+      team_id: "6XJTVN2FYA", # Your Apple Developer Team ID
+      output_directory: "./output", # Where to output the IPA file
+      configuration: "Release" # Change if you have a custom configuration
     )
-    upload_to_app_store
+    
+    # Upload to TestFlight
+    upload_to_testflight(
+      skip_waiting_for_build_processing: true, # Skip waiting for build processing
+      app_identifier: "com.glory.activetraveltours", # Your app identifier
+      distribute_external: true # Distribute to external testers
+    )
   end
 end
