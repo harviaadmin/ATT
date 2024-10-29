@@ -3,8 +3,8 @@ name: iOS TestFlight Deployment
 on:
   push:
     branches:
-      - main  # Change this if you want a different branch
-  workflow_dispatch:  # Add this line for manual triggering
+      - main
+  workflow_dispatch:
 
 jobs:
   build:
@@ -17,7 +17,7 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.0.0'  # Specify the Flutter version you are using
+          flutter-version: '3.0.0'
 
       - name: Install dependencies
         run: flutter pub get
@@ -25,13 +25,8 @@ jobs:
       - name: Build iOS app
         run: flutter build ios --release --no-codesign
 
-      - name: Deploy to TestFlight
-        uses: appleboy/app-store-action@v0.3.4
-        with:
-          apple_id: ${{ secrets.APPLE_ID }}
-          app_specific_password: ${{ secrets.APP_SPECIFIC_PASSWORD }}
-          team_id: ${{ secrets.DEVELOPER_TEAM_ID }}
-          app_identifier: ${{ secrets.BUNDLE_ID }}
-          ipa_path: build/ios/ipa/Runner.ipa
-          submit_for_review: false
-          skip_waiting_for_build_processing: true
+      - name: Set up Fastlane
+        run: |
+          gem install fastlane
+          cd ios
+          fastlane deliver --ipa build/ios/ipa/Runner.ipa --username "${{ secrets.APPLE_ID }}" --app_identifier "${{ secrets.BUNDLE_ID }}" --skip_screenshots --skip_metadata
