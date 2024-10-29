@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main  # Change this if you want a different branch
+  workflow_dispatch:  # Add this line for manual triggering
 
 jobs:
   build:
