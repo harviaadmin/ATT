@@ -1,0 +1,36 @@
+name: iOS TestFlight Deployment
+
+on:
+  push:
+    branches:
+      - main  # Change this if you want a different branch
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.0.0'  # Specify the Flutter version you are using
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build iOS app
+        run: flutter build ios --release --no-codesign
+
+      - name: Deploy to TestFlight
+        uses: appleboy/app-store-action@v0.3.4
+        with:
+          apple_id: ${{ secrets.APPLE_ID }}
+          app_specific_password: ${{ secrets.APP_SPECIFIC_PASSWORD }}
+          team_id: ${{ secrets.DEVELOPER_TEAM_ID }}
+          app_identifier: ${{ secrets.BUNDLE_ID }}
+          ipa_path: build/ios/ipa/Runner.ipa
+          submit_for_review: false
+          skip_waiting_for_build_processing: true
