@@ -25,8 +25,8 @@ jobs:
 
       - name: Deploy to TestFlight
         run: |
-          cd ios
-          fastlane deploy  # Change this line to call the existing deploy lane
+          cd ios/fastlane  # Change to the directory containing the Fastfile
+          fastlane fastfile deploy  # Call the deploy lane from the Fastfile
         env:
           APPLE_ID: ${{ secrets.APPLE_ID }}
           APP_SPECIFIC_PASSWORD: ${{ secrets.APP_SPECIFIC_PASSWORD }}
