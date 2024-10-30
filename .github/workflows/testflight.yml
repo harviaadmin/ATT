@@ -3,7 +3,7 @@ name: iOS TestFlight Deployment
 on:
   push:
     branches:
-      - main  # Adjust if using a different branch
+      - main  # Adjust if using a different branchs
   workflow_dispatch:
 
 jobs:
