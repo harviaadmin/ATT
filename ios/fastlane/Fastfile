@@ -7,7 +7,7 @@ platform :ios do
     api_key = app_store_connect_api_key(
       key_id: "G8GSWNU64X", # Replace with your Key ID
       issuer_id: "876bc17d-c779-43df-afe4-94f3f161d6a3", # Replace with your Issuer ID
-      key_filepath: "ios/fastlane/AuthKey_G8GSWNU64X.p8" # Path to your p8 file
+      key_filepath: "AuthKey_G8GSWNU64X.p8" # Path to your p8 file
     )
 
     # Step 2: Match to manage code signing profiles and certificates
